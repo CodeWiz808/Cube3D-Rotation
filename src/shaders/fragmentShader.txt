@@ -1,0 +1,11 @@
+#version 400 //Determines the version of GLSL
+
+in vec2 pass_textureCoords; //Takes the texture coordinates from the vertex shader as input
+
+out vec4 out_Colour; //The output of the pixel that is currently being processed
+
+uniform sampler2D textureSampler;
+
+void main(void) {
+	out_Colour = texture(textureSampler, pass_textureCoords); //Returns the color of the pixel on the texture at the given coordinates
+} //Run for every pixel processed
